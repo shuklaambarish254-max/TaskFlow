@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TaskFlow — Dashboard</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg">
+  <header class="topbar">
+    <div class="brand">TaskFlow</div>
+    <div class="top-actions">
+      <span id="userName" class="muted"></span>
+      <button id="logoutBtn" class="btn small ghost">Logout</button>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <aside class="sidebar">
+      <div class="card">
+        <h3>Filters</h3>
+        <select id="filterPriority" title="Filter tasks by priority">
+          <option value="">All priorities</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+
+        <select id="filterCompleted" title="Filter tasks by completion status">
+          <option value="">All</option>
+          <option value="false">Incomplete</option>
+          <option value="true">Completed</option>
+        </select>
+
+        <label><input type="checkbox" id="filterUpcoming" /> Upcoming only</label>
+
+        <button id="applyFilters" class="btn small">Apply</button>
+        <hr />
+        <button id="openAddTask" class="btn">+ Add Task</button>
+      </div>
+
+      <div class="card">
+        <h4>Weekly Summary</h4>
+        <div id="weeklySummary" class="progress-summary">Loading...</div>
+      </div>
+
+      <div class="card">
+        <div id="digitalClock">--:--:--</div>
+      </div>
+
+      <div class="card">
+        <h4>Notifications</h4>
+        <div id="missedNotifications" class="notifications muted small" style="margin-top:6px">No missed tasks</div>
+      </div>
+    </aside>
+
+    <section class="content">
+      <div class="card">
+        <div class="content-head">
+          <h2>Today's Tasks</h2>
+          <div class="muted small">Quick view of tasks due today</div>
+        </div>
+
+        <div id="todayList" class="task-list">Loading...</div>
+        <div id="todaySummary" class="muted small" style="margin-top:8px">Loading...</div>
+      </div>
+
+      <div class="card">
+        <div class="content-head">
+          <h2>Tasks</h2>
+          <div class="progress-inline">
+            <div class="muted">Today</div>
+            <div class="progress-bar" title="Daily completion">
+              <div id="dailyProgress" class="progress-fill"></div>
+            </div>
+            <div id="dailyPct" class="muted small">0%</div>
+          </div>
+        </div>
+
+        <div id="taskList" class="task-list">Loading tasks...</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Add Task now handled on a separate page (addtask.html) -->
+
+  <script src="api.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

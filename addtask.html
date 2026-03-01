@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TaskFlow — Add Task</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg">
+  <header class="topbar">
+    <div class="brand">TaskFlow</div>
+    <div class="top-actions">
+      <span id="userName" class="muted"></span>
+      <button id="logoutBtn" class="btn small ghost">Logout</button>
+    </div>
+  </header>
+
+  <main class="centered">
+    <div class="card">
+      <h2>Add Task</h2>
+      <form id="addTaskForm" class="form">
+        <label>Title<input id="taskTitle" type="text" required maxlength="200" /></label>
+        <label>Description<textarea id="taskDescription" rows="4"></textarea></label>
+        <label>Priority
+          <select id="taskPriority" title="Select task priority level">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+        </label>
+        <label>Due Date<input id="taskDueDate" type="date" /></label>
+        <label>Time<input id="taskDueTime" type="time" /></label>
+
+        <div class="form-actions">
+          <button type="submit" class="btn">Save</button>
+          <button id="cancelBtn" type="button" class="btn ghost">Cancel</button>
+        </div>
+        <div id="formError" class="error"></div>
+      </form>
+    </div>
+  </main>
+
+  <script src="api.js"></script>
+  <script src="addtask.js"></script>
+</body>
+</html>

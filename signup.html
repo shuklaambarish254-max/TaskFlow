@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>TaskFlow — Signup</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg">
+  <main class="auth-container">
+    <div class="auth-card">
+      <h1 class="brand">TaskFlow</h1>
+      <p class="muted">Create your account</p>
+
+      <form id="signupForm" class="form">
+        <label>Name
+          <input id="name" type="text" required placeholder="Your name" />
+        </label>
+
+        <label>Email
+          <input id="email" type="email" required placeholder="you@example.com" />
+        </label>
+
+        <label>Password
+          <div class="password-wrapper">
+            <input id="password" type="password" required minlength="6" placeholder="••••••" />
+            <button type="button" class="password-toggle" data-target="password" aria-label="Show password">👁️</button>
+          </div>
+        </label>
+
+        <button class="btn" type="submit">Create account</button>
+        <p class="small muted">Already have an account? <a href="index.html">Sign in</a></p>
+        <div id="signupError" class="error"></div>
+      </form>
+    </div>
+  </main>
+
+  <script src="api.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
